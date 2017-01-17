@@ -1,3 +1,6 @@
+
+
+
 $(function () {
 
     $(".tab_content").hide();
@@ -20,7 +23,7 @@ chrome.storage.sync.get('portalNotice',function(data){
 	for(i=0;i<data.portalNotice.length;i++){
 		console.log(1234);
 		console.log(data.portalNotice[i]);
-		str += "<div class=\"notice notice-success\"><p><a href = "+data.portalNotice[i][1]+">"+data.portalNotice[i][0]+"</a></p></div>";
+		str += "<div id= 'box"+i+"' class=\"notice notice-success\"><p><a href = \""+data.portalNotice[i][1]+"\">"+data.portalNotice[i][0]+"</a></p></div>";
 	}
 });
 
@@ -28,7 +31,7 @@ chrome.storage.sync.get('email',function(data){
 	for(i=0;i<data.email.length;i++){
 		console.log(5678);
 		console.log(data.email[i]);
-		str2 += "<div class=\"notice notice-info\"><p><a href = "+data.email[i][3]+">"+data.email[i][0]+"</a><br/>"+"sent by "+ data.email[i][1] + "<br/>"+ data.email[i][2]+"</p></div>";
+		str2 += "<div class=\"notice notice-info\"><p><a href = \""+data.email[i][3]+"\">"+data.email[i][0]+"</a><br/>"+"sent by "+ data.email[i][1] + "<br/>"+ data.email[i][2]+"</p></div>";
 	}
 });
 
@@ -39,3 +42,7 @@ window.onload = function what(){
 document.getElementById("tab1").innerHTML = str; 
 document.getElementById("tab2").innerHTML = str2; 
 };
+
+
+
+

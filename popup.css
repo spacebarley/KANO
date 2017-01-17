@@ -3,9 +3,9 @@
     margin-top:10px;
     }
 .notice {
-    font-family:'SeoulNamsanL';
-    background-color: #fafafa;
-    border-left: 6px solid #7f7f84;
+    font-family:SeoulNamsanL;
+   
+    border-left: 9px solid #7f7f84;
     margin-bottom: 10px;
     -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
@@ -20,7 +20,10 @@
     font-size: large;
 }
 .notice-success {
-    padding: 3px;
+     background-image: url("fitfit.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 12px;
     border-color: #009EFF;
     font-size: 100%;
 }
@@ -28,10 +31,14 @@
     color: #009EFF;
 }
 .notice-info {
-    border-color: #45ABCD;
+     background-image: url("fitfit_pink.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+     padding: 8px;
+    border-color: #FEBFCA;
 }
 .notice-info>strong {
-    color: #45ABCD;
+    color: #FEBFCA;
 }
 .notice-warning {
     border-color: #FEAF20;

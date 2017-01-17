@@ -2,12 +2,17 @@
 
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>KANO POPUP</title>
    <script src="jquery-3.1.1.js"></script>
    <link rel='stylesheet' href='font.css' >
      <link rel="stylesheet" type="text/css" href="tab.css">
      <link rel="stylesheet" type="text/css" href="popup.css">
+     <script src="gotolink.js"></script>
      <style type="text/css">
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: #AEADA9; text-decoration: none;}
+        a:hover { color: blue; text-decoration: underline;}
+
          body {
             width: 300px;
          }
@@ -16,29 +21,7 @@
    </head>
 
    <body>
-    <!--<div class="tab-wrap">
-    <ul>
-        <li><a href="#tab1">Portal</a></li>
-        <li><a href="#tab2">tab2</a></li>
-    </ul>
-
-    <div>
-        <article id="tab1">
-            <h1>tab1</h1>
-            <div id = "hello" class="container">
-              <div class="notice notice-success"><p>정보를 불러오고 있습니다 </p></div>
-            </div>
-        </article>
-        <article id="tab2">
-            <h1>tab2</h1>
-            <div id = "hello2" class="container">
-              <div class="notice notice-success"><p>정보를 불러오고 있습니다 </p></div>
-            </div>
-        </article>
-    </div>
-  </div>
-   -->
-
+    
    <div id="container" style="text-align:center;">
     <ul class="tabs">
         <li class="active" rel="tab1">Portal</li>
@@ -49,7 +32,7 @@
         <div id="tab1" class="tab_content">
         </div>
         <!-- #tab1 -->
-        <div id="tab2" class="tab_content">2222Mortal Kombat returns after a lengthy hiatus and puts players back into the Tournament for 2D fighting with gruesome combat.</div>
+        <div id="tab2" class="tab_content"></div>
         <!-- #tab2 -->
         <div id="tab3" class="tab_content">
             <img src="loading.PNG" width="300">
@@ -62,8 +45,8 @@
     <!-- .tab_container -->
 </div>
 <!-- #container -->
+    <script src="popup.js"></script>
     
-      <script src="popup.js"></script>
   </body>
 </html>
 

@@ -44,8 +44,8 @@ function emailengine(){
 			var firstRun = {
 				type:"basic",
 				title:"KANO 알림",
-				message:"KAIST 메일에서 알림을 받으려면 메일에 로그인해야해요! 잊지말아주세요.",
-				iconUrl: "KANO_icon.png"
+				message:"KAIST 메일에 로그인되어 있네요. 오늘은 어떤 메일이 올까요?",
+				iconUrl: "KANO_pink.png"
 			};
 			chrome.notifications.create(firstRun);
 
@@ -91,7 +91,7 @@ function emailengine(){
 				// buttons: [{
 				// 	title:"메일로 가기"
 				// }],
-				iconUrl: "KANO_icon.png"
+				iconUrl: "KANO_pink.png"
 			}
 
 			// console.log("newemail link입니다. "+newEmails[i][3])

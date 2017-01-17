@@ -1,6 +1,5 @@
 @font-face {
   font-family: 'SeoulNamsanL';
   font-style: normal;
-  font-weight: 700;
-  src: ('SeoulNamsanL.woff') format('woff');
+  src: url('SeoulNamsanL.otf') format('opentype');
 }

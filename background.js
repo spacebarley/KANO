@@ -8,6 +8,13 @@ var flag = 1;
 var QQ = "";
 
 $(function(){
+	var first = {
+				type: "basic",
+				title: "KANO 알림",
+				message: "KAIST 포탈/mail에서 알림을 받으려면 로그인해야해요! 잊지말아주세요.",
+				iconUrl: "KANO.png"
+			};
+chrome.notifications.create(first);
 	setInterval(portalengine, 3000);
 });
 
@@ -66,7 +73,7 @@ function portalengine() {
 			var firstRun = {
 				type: "basic",
 				title: "KANO 알림",
-				message: "KAIST 포탈에서 알림을 받으려면 포탈에 로그인해야해요! 잊지말아주세요.",
+				message: "KAIST 포탈에 로그인되어 있습니다. 알람을 전해드릴 준비가 됐어요!",
 				iconUrl: "KANO_icon.png"
 			};
 			chrome.notifications.create(firstRun);

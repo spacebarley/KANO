@@ -9,11 +9,13 @@
 	"version":"1.5",
 	"permissions":[
 		"tabs",
+		"activeTab",
 		"notifications",
 		"https://portalsso.kaist.ac.kr/login.ps",
 		"storage",
 		"https://portal.kaist.ac.kr/portal/default/home/student.page",
 		"https://mail.kaist.ac.kr/Mail",
+		"https://mail.kaist.ac.kr/*",
 		"https://klms.kaist.ac.kr/local/ubnotification/"
 	],
 	"browser_action":{
@@ -27,7 +29,7 @@
 		// "open_in_tab": true
 	},
 	"icons":{
-		"64" : "KANO_icon.png",
+		"64" : "KANO.png",
 		"19" : "KANO_icon_19.png"
 	},
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
