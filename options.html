@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Extension Options</title>
+    <style>
+      body: { padding: 10px; }
+    </style>
+  </head>
+
+  <body>
+    PORTAL 검색어:
+    <input type="text" name="QUERY FIELD" id="queryForPortal">
+    <br/>
+    <label>
+      <input type="checkbox" id="PORTAL ALARM">
+      포탈 알림 받기
+      <input type="checkbox" id="EMAIL ALARM">
+      이메일 알림 받기
+    </label>
+
+    <div id="status"></div>
+    <button id="save">Save</button>
+
+    <script src="options.js"></script>
+    <p>쉼표로 검색어를 구분해주세요. 검색어로 등록된 단어들이 포함된 학생공지사항을 검색합니다. EX)근로,알바,아르바이트
+    <br/>등록하지 않을 경우 1페이지의 모든 공지사항을 가져옵니다. </p>
+  </body>
+</html>

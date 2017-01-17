@@ -1,0 +1,34 @@
+{
+	"manifest_version":2,
+	"name":"KANO",
+	"description":"KAist NOtifier 찾아보기 귀찮았던 공지사항, 알림들을 한 눈에!",
+	"background":{
+		"page":"background.html"
+		// "scripts": ["jquery-3.1.1.js", "background.js"]
+	},
+	"version":"1.5",
+	"permissions":[
+		"tabs",
+		"notifications",
+		"https://portalsso.kaist.ac.kr/login.ps",
+		"storage",
+		"https://portal.kaist.ac.kr/portal/default/home/student.page",
+		"https://mail.kaist.ac.kr/Mail",
+		"https://klms.kaist.ac.kr/local/ubnotification/"
+	],
+	"browser_action":{
+		"default_title": "See the details",
+		"default_popup":"popup.html"
+	},
+	
+	"options_ui": {
+	// Required.
+		"page": "options.html"
+		// "open_in_tab": true
+	},
+	"icons":{
+		"64" : "KANO_icon.png",
+		"19" : "KANO_icon_19.png"
+	},
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
