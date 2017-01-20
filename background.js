@@ -1,11 +1,14 @@
 //유저가 항상 포탈에 직접 로그인해야함.
 
+'use strict';
+
 var rawNotices = [];
 var selectedNotices = [];
 var newNotices = [];
 var latestTitle;
 var flag = 1;
 var QQ = "";
+var count = 0;
 
 $(function(){
 	var first = {
@@ -14,11 +17,12 @@ $(function(){
 				message: "KAIST 포탈/mail에서 알림을 받으려면 로그인해야해요! 잊지말아주세요.",
 				iconUrl: "KANO.png"
 			};
-chrome.notifications.create(first);
-	setInterval(portalengine, 3000);
+	chrome.notifications.create(first);
+	window.portal = window.setInterval(portalengine, 3000);
 });
 
 function portalengine() {
+	count++;
 	chrome.storage.sync.get('query',function(data){
 		QQ = data.query
 	})
@@ -42,11 +46,11 @@ function portalengine() {
 	// console.log("Query type is "+typeof(query))
 	$.get('https://portal.kaist.ac.kr/board/list.brd?boardId=student_notice&lang_knd=ko&', function(data){
 		var htmlData = data;
-		$lists = $(htmlData).find('table.req_tbl_01').find('td.req_tit.req_bn').find('a');
+		var lists = $(htmlData).find('table.req_tbl_01').find('td.req_tit.req_bn').find('a');
 		// $('body').append($lists);
-		for(i = 0; i<$lists.length; i++){
-			var title = $lists.eq(i).attr("title")
-			var link = "https://portal.kaist.ac.kr" + $lists.eq(i).attr("href")
+		for(i = 0; i<lists.length; i++){
+			var title = lists.eq(i).attr("title")
+			var link = "https://portal.kaist.ac.kr" + lists.eq(i).attr("href")
 			rawNotices[i] = [title, link]
 		}
 	})	
@@ -56,8 +60,8 @@ function portalengine() {
 	if(query.length == 0){
 		selectedNotices = rawNotices
 	}else{
-		for(i = 0; i < rawNotices.length; i++){
-			for(j = 0; j < query.length; j++){
+		for(var i = 0; i < rawNotices.length; i++){
+			for(var j = 0; j < query.length; j++){
 				if (rawNotices[i][0].includes(query[j])){
 					selectedNotices.push(rawNotices[i])
 					break;
@@ -82,7 +86,7 @@ function portalengine() {
 			flag = 1;
 
 		} else if (latestTitle != selectedNotices[0][0]){
-			for(j = 0; j < selectedNotices.length; j++){
+			for(var j = 0; j < selectedNotices.length; j++){
 				if(latestTitle == selectedNotices[j][0]){
 					break;
 				}else{
@@ -115,7 +119,7 @@ function portalengine() {
 	if(newNotices.length == 0){
 		//새 노티 없음
 	}else{
-		for(i = 0;i<newNotices.length; i++){
+		for(var i = 0;i<newNotices.length; i++){
 			var myNoti = {
 				type: "basic",
 				title: "새 포탈 공지가 떴어요! - KANO",
@@ -135,4 +139,9 @@ function portalengine() {
 	}
 
 	newNotices = []
+
+	if (count == 10){
+	count = 0;
+	clearInterval(window.portal);
+	}
 }
